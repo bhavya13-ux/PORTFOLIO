@@ -22,5 +22,7 @@ This project allowed me to dive deep into frontend development , applying my kno
 
 Feel free to explore the project here :
 [Explore-Project](https://github.com/bhavya13-ux/PORTFOLIO)
+GitHub repo link :
+[Click-Here](https://bhavya13-ux.github.io/PORTFOLIO/)
 
 
