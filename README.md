@@ -21,5 +21,6 @@ Welcome to my portfolio! This document provides an overview of the contents, str
 This project allowed me to dive deep into frontend development , applying my knowledge to create a fully functional and user friendly application .
 
 Feel free to explore the project here :
+[Explore-Project](https://github.com/bhavya13-ux/PORTFOLIO)
 
 
