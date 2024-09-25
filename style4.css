@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+header{
+  position:sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+ul{
+  display: flex;
+  list-style: none;
+  height: 30px;
+  gap: 50px;
+  justify-content: center;
+  padding-right: 95px;
+  padding-top: 25px;
+  font-size: 17px;
+  
+}
+li:hover{
+    cursor: pointer;
+    color: #4c8923;
+    font-weight: bolder;
+    transform: scale(1.1);
+}
+nav{
+    background-color: rgb(5, 5, 57);
+    color: aliceblue;
+    height: 50px;
+    box-shadow: 0 2px 8px black;
+}
+nav h2{
+    padding-left: 120px;
+    position: absolute;
+    top: 8px;
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+}
+body{
+    overflow-x: hidden;
+}
+ .container{
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  height: 100vh;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  background-color:#082032;
+ }
+ .home-img img{
+  width: 25vw;
+  border-radius: 50%;
+  box-shadow: 0 0 25px #3639d8;
+  cursor: pointer;
+  animation: floatImage 4s ease-in-out infinite;
+  transition: 0.4s ease;
+ }
+ .home-img img:hover{
+  box-shadow: 0 0 25px #3639d8,
+  0 0 35px #3639d8,
+  0 0 45px #3639d8;
+ }
+  @keyframes floatImage{
+    0%{
+    transform:translateY(0);
+    }
+    50%{
+      transform: translateY(-2.4rem);
+    }
+    100%{
+      transform: translateY(0);
+    }
+  }
+  .home-content{
+    margin-left: 5rem;
+  }
+  .home-content h3{
+    font-size: 2.7rem;
+    font-weight: 700;
+    color: aliceblue;
+  }
+  .home-content span{
+    color: #0ef;
+  }
+  .home-content h1{
+    color: aliceblue;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .home-content p{
+  color: aliceblue;
+  font-size: 1.6rem;
+  margin-top: 4.5px;
+  }
+  .icon-container{
+    display: inline-flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 42px;
+    font-size: 2rem;
+    color: aliceblue;
+    margin: 3rem 1.5rem 4rem 3.5rem;
+    position: relative;
+  }
+  .icon{
+    border: 0.2rem solid cyan;
+    border-radius: 50%;
+    padding: 5px;
+    transition: 0.3s ease;
+  }
+  .icon:hover{
+    transform:scale(1.2) translateY(-10px);
+    background-color: #0ef;
+    color: black;
+    box-shadow: 0 0 25px cyan;
+    cursor: pointer;
+  }
+  .resume-btn{
+    position: relative;
+    top: 60px;
+    left: -167px;
+  }
+.about-container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 100%;
+  height: 100vh;
+  background-color: #082032;
+  gap: 3.5rem;
+  padding-left: 170px;
+}
+.about-text{
+  padding-top: 100px;
+}
+.about-text h2{
+  font-size: 60px;
+  color: white;
+  letter-spacing: 4px;
+}
+.about-text span{
+  color: aqua;
+  letter-spacing: 4px;
+}
+.about-text p{
+  color: aliceblue;
+  line-height: 1.5;
+  word-spacing: 4px;
+}
+.about-img img{
+  max-width: 250px;
+  height: auto;
+  width: 100%;
+}
+.project-container{
+  flex-direction: column;
+  gap: 10px;
+}
+.project-text h2{
+  color: #0ef;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 4px;
+}
+.project-text span{
+  color: whitesmoke;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 4px;
+}
+.Project-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  gap: 70px;
+  position: relative; /* Ensure proper positioning */
+}
+
+.project {
+  position: relative; /* Needed to position .layer relative to this container */
+  width: 350px; /* Ensure width matches the image */
+}
+
+.project img {
+  width: 100%; /* Ensure image takes up full width of .project */
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.5s;
+  filter: brightness(40%);
+}
+
+.layer {
+  width: 100%; /* Ensure .layer takes up full width of the .project */
+  height: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), #0ef);
+  position: absolute;
+  border-radius: 8px;
+  left: 0;
+  bottom: 0;
+  overflow: hidden; /* Ensure content stays inside */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px; /* Adjust padding to make space for text */
+  box-sizing: border-box; /* Ensure padding is included in the height */
+  transition: height 0.5s ease;
+  z-index: 1; /* Ensures .layer appears on top of the image */
+}
+
+.layer h5, .layer p {
+  opacity: 0; /* Initially hide the text */
+  transition: opacity 0.3s; /* Smooth fade-in for text */
+  margin: 0; /* Remove extra margin to avoid overflow */
+  text-align: center; /* Center text inside the layer */
+}
+
+.layer h5 {
+  color:whitesmoke;
+  font-size: 18px; /* Slightly reduced font-size to fit better */
+  font-weight: 600;
+  margin-bottom: 10px; /* Adjust margin */
+}
+
+.layer p {
+  color:whitesmoke;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+.layer i {
+  color: #ff004f;
+  margin-top: 10px; /* Adjust margin for icon */
+  font-size: 20px;
+  background: #fff;
+  width: 50px; /* Reduced size of the icon */
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.project img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.project:hover .layer {
+  height: 100%; /* Fully expand .layer on hover */
+  overflow: auto; /* Enable scrolling if content overflows */
+}
+.project:hover .layer h5, 
+.project:hover .layer p {
+  opacity: 1; /* Show text on hover */
+}
+.contact-container{
+  flex-direction: column;
+  gap: 10px;
+}
+.container h2{
+  color: #0ef;
+  font-size: 40px;
+}
+.container p{
+  color: aliceblue;
+  font-size: 15px;
+}
+.contact-list{
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.sub-contact input,textarea{
+  padding: 18px;
+  outline: none;
+  border-radius: 20px;
+  width: 700px;
+  background: rgba(255,255,255,0.3);
+  color: whitesmoke;
+  line-height: 1.5rem;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  resize: none;
+}
+.send-message{
+  display: inline-block;
+  padding: 12px 28px;
+  margin-top: 5px;
+  background-color: #0ef;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #081b29;
+  letter-spacing: 1px;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideTop 1s ease forwards ;
+  animation-delay: 2s;
+  box-shadow: 0 0 5px #0ef,
+  0 0 25px #0ef
+}
+@keyframes slideTop {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Start from 50px below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move to its original position */
+  }
+}
+.send-message:hover{
+  box-shadow: 0 0 5px cyan,
+  0 0 25px cyan, 0 0 50px cyan,
+  0 0 100px cyan,0 0 200px cyan;
+  cursor: pointer;
+}
+/* Responsive Design  */
+@media (max-width:1200px) {
+  html{
+    font-size: 55%;
+  }
+}
+@media  (max-width:991px) {
+  .header{
+    padding: 2rem 3%;
+  }
+  .section{
+    padding: 10rem,3%;
+  }
+  .sub-contact input{
+    width: 100%;
+  }
+  .sub-contact textarea{
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 2px;
+  }
+  .Project-list{
+    flex-direction: column;
+    gap: 15px;
+  }
+  .project{
+    width: 260px;
+  }
+  .project-text h2{
+    font-size: 30px;
+  }
+  .project-text span{
+    font-size: 30px;
+  }
+  .about-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .about-text{
+    padding-top: 10px;
+  }
+  .about-text h2{
+    font-size: 35px;
+  }
+  .about-img img{
+    width: 280px;
+  }
+  header h2{
+    display: none;
+  }
+  header{
+    position:sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-left: 100px;
+  }
+  .home{
+    flex-direction: column;
+  }
+  .home-img img {
+    margin-top: -150px;
+    width: 40%;
+    margin-left: 100px;
+  }
+}
+@media  (max-width:402px){
+  .about-img img{
+    padding-right: 80px;
+  }
+  .layer{
+    font-size: 12px;
+  }
+  .resume-btn{
+    top: 50px;
+  }
+}
